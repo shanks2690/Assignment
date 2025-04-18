@@ -1,0 +1,10 @@
+
+datasources:
+  default:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    dialect: POSTGRES
+    schema-generate: CREATE_DROP
+    maximum-pool-size: 10

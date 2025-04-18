@@ -1,0 +1,25 @@
+micronaut:
+  application:
+    name: task1-consumer
+    introspection:
+      packages:
+        - consumer.entity
+datasources:
+  default:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+jpa:
+  default:
+    properties.hibernate.hbm2ddl.auto: update
+rabbitmq:
+  exchanges:
+    item-exchange:
+      type: direct
+      durable: true
+  queues:
+    item-queue:
+      durable: true
+      bindings:
+        - exchange: item-exchange
+          routingKey: item.key

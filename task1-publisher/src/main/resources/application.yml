@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: task1-publisher
+rabbitmq:
+  uri: ${RABBITMQ_URI}
+file:
+  path: classpath:data.txt
+
